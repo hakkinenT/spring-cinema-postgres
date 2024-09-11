@@ -1,0 +1,5 @@
+CREATE TABLE tb_gender(
+	gender_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+	description VARCHAR(255) NOT NULL,
+	PRIMARY KEY(gender_id)
+);

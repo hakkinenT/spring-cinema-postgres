@@ -1,0 +1,5 @@
+CREATE TABLE tb_role(
+    role_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+    authority VARCHAR(255) NOT NULL,
+    PRIMARY KEY(role_id)
+);
