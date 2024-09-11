@@ -1,0 +1,10 @@
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('001', 0, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('002', 0, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('003', 0, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('004', 0, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('005', 0, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('006', 1, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('007', 1, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('008', 1, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('009', 1, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);
+INSERT INTO tb_ticket(code_seat_ticket, ticket_type, exhibition_date, room_number, order_id) VALUES ('010', 1, TIMESTAMP WITHOUT TIME ZONE '2024-04-06T09:00:00Z', 1, 1);

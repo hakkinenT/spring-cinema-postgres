@@ -1,0 +1,1 @@
+INSERT INTO tb_order(moment, total, user_id) VALUES (TIMESTAMP WITH TIME ZONE '2024-04-06T08:30:00Z', 450.0, 2);

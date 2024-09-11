@@ -1,0 +1,1 @@
+INSERT INTO tb_payment(moment, payment_type, order_id) VALUES (TIMESTAMP WITH TIME ZONE '2024-04-06T15:30:00Z',0, 1);

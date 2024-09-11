@@ -1,0 +1,11 @@
+INSERT INTO tb_actor(name) VALUES ('Kate Winslet');
+INSERT INTO tb_actor(name) VALUES ('Leonardo DiCaprio');
+INSERT INTO tb_actor(name) VALUES ('Lindsey Lohan');
+INSERT INTO tb_actor(name) VALUES ('Rachel McAdams');
+INSERT INTO tb_actor(name) VALUES ('Lacey Chabert');
+INSERT INTO tb_actor(name) VALUES ('Amanda Seyfried');
+INSERT INTO tb_actor(name) VALUES ('Keira Knightley');
+INSERT INTO tb_actor(name) VALUES ('Matthew Macfadyen');
+INSERT INTO tb_actor(name) VALUES ('Amy Adams');
+INSERT INTO tb_actor(name) VALUES ('Matthew Goode');
+INSERT INTO tb_actor(name) VALUES ('Chris Egan');

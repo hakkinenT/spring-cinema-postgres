@@ -1,0 +1,2 @@
+INSERT INTO tb_user (first_name, last_name, email, birth_date, password, role_id) VALUES ('Alex', 'Brown', 'alex@gmail.com', '1985-10-08','$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG', 1);
+INSERT INTO tb_user (first_name, last_name, email, birth_date, password, role_id) VALUES ('Maria', 'Green', 'maria@gmail.com', '1990-03-11','$2a$10$eACCYoNOHEqXve8aIWT8Nu3PkMXWBaOxJ9aORUYzfMQCbVBIhZ8tG', 3);
