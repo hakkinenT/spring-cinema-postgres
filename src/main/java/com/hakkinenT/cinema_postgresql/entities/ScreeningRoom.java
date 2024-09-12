@@ -2,8 +2,11 @@ package com.hakkinenT.cinema_postgresql.entities;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +16,9 @@ public class ScreeningRoom {
     private Integer roomNumber;
 
     private Integer capacity;
+
+    @OneToMany(mappedBy = "id.screeningRoom")
+    private List<Seat> seats = new ArrayList<>();
 
     public ScreeningRoom() {
     }
@@ -36,6 +42,10 @@ public class ScreeningRoom {
 
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
+    }
+
+    public List<Seat> getSeats() {
+        return seats;
     }
 
     @Override
