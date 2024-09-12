@@ -1,4 +1,4 @@
-CREATE TABLE tb_act(
+CREATE TABLE tb_acts(
 	movie_id INTEGER NOT NULL,
 	actor_id INTEGER NOT NULL,
 	actor_role VARCHAR(255) NOT NULL,
