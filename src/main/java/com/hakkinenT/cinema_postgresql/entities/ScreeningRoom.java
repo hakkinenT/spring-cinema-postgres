@@ -20,6 +20,9 @@ public class ScreeningRoom {
     @OneToMany(mappedBy = "id.screeningRoom")
     private List<Seat> seats = new ArrayList<>();
 
+    @OneToMany(mappedBy = "id.screeningRoom")
+    private List<Session> sessions = new ArrayList<>();
+
     public ScreeningRoom() {
     }
 
@@ -46,6 +49,10 @@ public class ScreeningRoom {
 
     public List<Seat> getSeats() {
         return seats;
+    }
+
+    public List<Session> getSessions() {
+        return sessions;
     }
 
     @Override

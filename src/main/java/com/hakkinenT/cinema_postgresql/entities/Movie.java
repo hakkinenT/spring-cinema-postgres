@@ -33,6 +33,9 @@ public class Movie {
     @OneToMany(mappedBy = "id.movie")
     private List<Acts> performances = new ArrayList<>();
 
+    @OneToMany(mappedBy = "movie")
+    private List<Session> sessions = new ArrayList<>();
+
     public Movie() {
     }
 
@@ -99,6 +102,10 @@ public class Movie {
 
     public List<Acts> getPerformances() {
         return performances;
+    }
+
+    public List<Session> getSessions() {
+        return sessions;
     }
 
     @Override
