@@ -21,6 +21,9 @@ public class Order {
     @JoinColumn(name = "user_id")
     private User user;
 
+    @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
+    private Payment payment;
+
     public Order() {
     }
 
@@ -30,11 +33,12 @@ public class Order {
         this.total = total;
     }
 
-    public Order(Integer id, Instant moment, Double total, User user) {
+    public Order(Integer id, Instant moment, Double total, User user, Payment payment) {
         this.id = id;
         this.moment = moment;
         this.total = total;
         this.user = user;
+        this.payment = payment;
     }
 
     public Integer getId() {
@@ -67,6 +71,14 @@ public class Order {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Payment getPayment() {
+        return payment;
+    }
+
+    public void setPayment(Payment payment) {
+        this.payment = payment;
     }
 
     @Override
