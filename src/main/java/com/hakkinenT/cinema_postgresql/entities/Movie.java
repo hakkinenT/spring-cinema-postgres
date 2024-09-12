@@ -2,9 +2,7 @@ package com.hakkinenT.cinema_postgresql.entities;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_movie")
@@ -31,6 +29,9 @@ public class Movie {
             @JoinColumn(name = "gender_id")
     })
     private Set<Gender> genders = new HashSet<>();
+
+    @OneToMany(mappedBy = "id.movie")
+    private List<Acts> performances = new ArrayList<>();
 
     public Movie() {
     }
@@ -94,6 +95,10 @@ public class Movie {
 
     public Set<Gender> getGenders() {
         return genders;
+    }
+
+    public List<Acts> getPerformances() {
+        return performances;
     }
 
     @Override

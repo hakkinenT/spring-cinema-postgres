@@ -2,6 +2,8 @@ package com.hakkinenT.cinema_postgresql.entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,6 +15,9 @@ public class Actor {
     private Integer id;
 
     private String name;
+
+    @OneToMany(mappedBy = "id.actor")
+    private List<Acts> performances = new ArrayList<>();
 
     public Actor() {
     }
@@ -36,6 +41,10 @@ public class Actor {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Acts> getPerformances() {
+        return performances;
     }
 
     @Override
