@@ -3,6 +3,8 @@ package com.hakkinenT.cinema_postgresql.entities;
 import jakarta.persistence.*;
 
 import java.time.Instant;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -23,6 +25,9 @@ public class Order {
 
     @OneToOne(mappedBy = "order", cascade = CascadeType.ALL)
     private Payment payment;
+
+    @OneToMany(mappedBy = "order")
+    private List<Ticket> tickets = new ArrayList<>();
 
     public Order() {
     }

@@ -4,6 +4,8 @@ import com.hakkinenT.cinema_postgresql.entities.pk.SessionPK;
 import jakarta.persistence.*;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_session")
@@ -18,6 +20,9 @@ public class Session {
     @ManyToOne
     @JoinColumn(name = "movie_id")
     private Movie movie;
+
+    @OneToMany(mappedBy = "id.session")
+    private List<Ticket> tickets = new ArrayList<>();
 
     public Session() {
     }
