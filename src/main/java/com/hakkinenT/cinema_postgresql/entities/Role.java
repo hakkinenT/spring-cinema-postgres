@@ -43,6 +43,10 @@ public class Role {
         this.authority = authority;
     }
 
+    public List<User> getUsers() {
+        return users;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
