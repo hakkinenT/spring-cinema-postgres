@@ -19,7 +19,7 @@ public class SessionController {
     private SeatService seatService;
 
     @GetMapping(value = "{exhibitionDate}/room/{roomNumber}")
-    public ResponseEntity<List<RoomSeatDTO>> getSessionSeat(@PathVariable LocalDateTime exhibitionDate, @PathVariable int roomNumber){
+    public ResponseEntity<List<RoomSeatDTO>> getSessionMap(@PathVariable LocalDateTime exhibitionDate, @PathVariable int roomNumber){
         List<RoomSeatDTO> roomSeats = seatService.getRoomMap(exhibitionDate, roomNumber);
         return ResponseEntity.ok(roomSeats);
     }
