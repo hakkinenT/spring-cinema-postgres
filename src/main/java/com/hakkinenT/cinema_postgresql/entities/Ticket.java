@@ -12,6 +12,7 @@ public class Ticket {
     @EmbeddedId
     private TicketPK id = new TicketPK();
 
+    @Enumerated(EnumType.ORDINAL)
     private TicketType ticketType;
 
     @ManyToOne
@@ -64,11 +65,11 @@ public class Ticket {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Ticket ticket = (Ticket) o;
-        return Objects.equals(id, ticket.id) && ticketType == ticket.ticketType && Objects.equals(order, ticket.order);
+        return Objects.equals(id, ticket.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, ticketType, order);
+        return Objects.hashCode(id);
     }
 }
