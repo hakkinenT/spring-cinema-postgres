@@ -7,6 +7,7 @@ import com.hakkinenT.cinema_postgresql.repositories.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public class MovieService {
     @Value(value = "${message.not-found}")
     private String notFoundMessage;
 
-
+    @Transactional(readOnly = true)
     public MovieDTO findMovieById(Integer movieId){
         List<Movie> movies = movieRepository.searchMovieById(movieId);
 
