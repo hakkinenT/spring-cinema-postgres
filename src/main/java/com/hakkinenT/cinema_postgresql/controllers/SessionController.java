@@ -1,7 +1,7 @@
 package com.hakkinenT.cinema_postgresql.controllers;
 
 import com.hakkinenT.cinema_postgresql.dto.RoomSeatDTO;
-import com.hakkinenT.cinema_postgresql.services.SessionService;
+import com.hakkinenT.cinema_postgresql.services.SeatService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,11 +16,11 @@ import java.util.List;
 @RequestMapping(value = "/sessions")
 public class SessionController {
     @Autowired
-    private SessionService sessionService;
+    private SeatService seatService;
 
     @GetMapping(value = "{exhibitionDate}/room/{roomNumber}")
     public ResponseEntity<List<RoomSeatDTO>> getSessionSeat(@PathVariable LocalDateTime exhibitionDate, @PathVariable int roomNumber){
-        List<RoomSeatDTO> roomSeats = sessionService.getSessionSeats(exhibitionDate, roomNumber);
+        List<RoomSeatDTO> roomSeats = seatService.getRoomMap(exhibitionDate, roomNumber);
         return ResponseEntity.ok(roomSeats);
     }
 }

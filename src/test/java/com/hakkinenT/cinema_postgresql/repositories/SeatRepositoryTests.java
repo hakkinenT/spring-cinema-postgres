@@ -1,6 +1,5 @@
 package com.hakkinenT.cinema_postgresql.repositories;
 
-import com.hakkinenT.cinema_postgresql.entities.Movie;
 import com.hakkinenT.cinema_postgresql.projections.SeatProjection;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -30,7 +29,7 @@ public class SeatRepositoryTests {
 
     @Test
     public void getSessionSeatsShouldReturnARoomMapOfSessionWillBeShownWhenIdExist(){
-        List<SeatProjection> seats = seatRepository.getSessionSeats(exhibitionDate, existingRoomNumber);
+        List<SeatProjection> seats = seatRepository.getRoomMap(exhibitionDate, existingRoomNumber);
         Assertions.assertFalse(seats.isEmpty());
         Assertions.assertEquals("001",seats.getFirst().getCodeSeat());
         Assertions.assertTrue(seats.getFirst().getIsSold());

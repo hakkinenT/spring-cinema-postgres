@@ -11,13 +11,13 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
-public class SessionService {
+public class SeatService {
     @Autowired
     private SeatRepository seatRepository;
 
     @Transactional(readOnly = true)
-    public List<RoomSeatDTO> getSessionSeats(LocalDateTime exhibitionDate, int roomNumber){
-        List<SeatProjection> seats = seatRepository.getSessionSeats(exhibitionDate, roomNumber);
+    public List<RoomSeatDTO> getRoomMap(LocalDateTime exhibitionDate, int roomNumber){
+        List<SeatProjection> seats = seatRepository.getRoomMap(exhibitionDate, roomNumber);
         return seats.stream().map(RoomSeatDTO::new).toList();
     }
 }

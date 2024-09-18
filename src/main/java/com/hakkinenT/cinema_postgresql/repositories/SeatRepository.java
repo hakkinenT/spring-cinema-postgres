@@ -20,5 +20,5 @@ public interface SeatRepository extends JpaRepository<Seat, SeatPK> {
             FROM tb_seat AS st
             WHERE st.room_number=:roomNumber;
             """)
-    List<SeatProjection> getSessionSeats(LocalDateTime exhibitionDate, Integer roomNumber);
+    List<SeatProjection> getRoomMap(LocalDateTime exhibitionDate, Integer roomNumber);
 }
