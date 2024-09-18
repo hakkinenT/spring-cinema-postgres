@@ -76,13 +76,8 @@ public class OrderService {
     }
 
     private List<Ticket> createTicketList(List<TicketDTO> ticketsDTO, Order order){
-        List<Ticket> tickets = new ArrayList<>();
-        for(TicketDTO ticketDto : ticketsDTO){
-            Ticket ticket = createTicket(ticketDto, order);
-            tickets.add(ticket);
-        }
 
-        return tickets;
+        return ticketsDTO.stream().map(ticket -> createTicket(ticket, order)).toList();
     }
 
     private Ticket createTicket(TicketDTO ticketDTO, Order order) {
