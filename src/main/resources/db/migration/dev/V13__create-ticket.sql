@@ -1,6 +1,7 @@
 CREATE TABLE tb_ticket(
 	code_seat_ticket VARCHAR(255) NOT NULL,
 	ticket_type SMALLINT NOT NULL,
+	ticket_value DECIMAL NOT NULL,
 	exhibition_date TIMESTAMP NOT NULL,
 	room_number INTEGER NOT NULL,
 	order_id INTEGER NOT NULL,

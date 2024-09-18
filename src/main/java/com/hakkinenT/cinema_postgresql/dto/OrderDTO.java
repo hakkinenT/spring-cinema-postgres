@@ -1,7 +1,6 @@
 package com.hakkinenT.cinema_postgresql.dto;
 
 import com.hakkinenT.cinema_postgresql.entities.Order;
-import com.hakkinenT.cinema_postgresql.entities.Payment;
 import com.hakkinenT.cinema_postgresql.entities.Ticket;
 
 import java.time.Instant;
@@ -14,7 +13,7 @@ public class OrderDTO {
     private Double total;
     private String userEmail;
     private PaymentDTO payment;
-    private List<TicketMinDTO> tickets = new ArrayList<>();
+    private List<TicketDTO> tickets = new ArrayList<>();
 
     public OrderDTO() {
     }
@@ -43,7 +42,7 @@ public class OrderDTO {
         this.payment = new PaymentDTO(entity.getPayment());
 
         for(Ticket t : tickets){
-            this.tickets.add(new TicketMinDTO(t));
+            this.tickets.add(new TicketDTO(t));
         }
     }
 
@@ -87,11 +86,11 @@ public class OrderDTO {
         this.payment = payment;
     }
 
-    public List<TicketMinDTO> getTickets() {
+    public List<TicketDTO> getTickets() {
         return tickets;
     }
 
-    public void setTickets(List<TicketMinDTO> tickets) {
+    public void setTickets(List<TicketDTO> tickets) {
         this.tickets = tickets;
     }
 }

@@ -3,7 +3,7 @@ package com.hakkinenT.cinema_postgresql.services;
 import com.hakkinenT.cinema_postgresql.dto.OrderDTO;
 import com.hakkinenT.cinema_postgresql.dto.PaymentDTO;
 import com.hakkinenT.cinema_postgresql.dto.SessionMinDTO;
-import com.hakkinenT.cinema_postgresql.dto.TicketMinDTO;
+import com.hakkinenT.cinema_postgresql.dto.TicketDTO;
 import com.hakkinenT.cinema_postgresql.entities.*;
 import com.hakkinenT.cinema_postgresql.enums.PaymentType;
 import com.hakkinenT.cinema_postgresql.enums.TicketType;
@@ -45,7 +45,9 @@ public class OrderService {
 
     private void createOrder(OrderDTO dto, Order order){
         order.setMoment(Instant.now());
-        order.setTotal(dto.getTotal());
+
+        Double total = calculateOrderTotal(dto);
+        order.setTotal(total);
 
         User user = userRepository
                 .findByEmail(dto.getUserEmail())
@@ -57,6 +59,13 @@ public class OrderService {
         order.setPayment(payment);
     }
 
+    private Double calculateOrderTotal(OrderDTO dto) {
+        return dto.getTickets()
+                .stream()
+                .map(TicketDTO::getTicketValue)
+                .reduce(0.0, Double::sum);
+    }
+
     private Payment createPayment(PaymentDTO dto, Order order){
         Payment payment = new Payment();
         PaymentType type = PaymentType.valueOf(dto.getPaymentType());
@@ -66,9 +75,9 @@ public class OrderService {
         return payment;
     }
 
-    private List<Ticket> createTicketList(List<TicketMinDTO> ticketsDTO, Order order){
+    private List<Ticket> createTicketList(List<TicketDTO> ticketsDTO, Order order){
         List<Ticket> tickets = new ArrayList<>();
-        for(TicketMinDTO ticketDto : ticketsDTO){
+        for(TicketDTO ticketDto : ticketsDTO){
             Ticket ticket = createTicket(ticketDto, order);
             tickets.add(ticket);
         }
@@ -76,13 +85,15 @@ public class OrderService {
         return tickets;
     }
 
-    private Ticket createTicket(TicketMinDTO ticketDTO, Order order) {
+    private Ticket createTicket(TicketDTO ticketDTO, Order order) {
         Ticket ticket = new Ticket();
         ticket.setOrder(order);
         ticket.setCodeSeatTicket(ticketDTO.getCodeSeat());
 
         TicketType type = TicketType.valueOf(ticketDTO.getTicketType());
         ticket.setTicketType(type);
+
+        ticket.setTicketValue(ticketDTO.getTicketValue());
 
         Session session = createSession(ticketDTO.getSession());
 
@@ -102,6 +113,7 @@ public class OrderService {
         return session;
 
     }
+
     private ScreeningRoom createScreeningRoom(Integer roomNumber){
         ScreeningRoom room = new ScreeningRoom();
         room.setRoomNumber(roomNumber);

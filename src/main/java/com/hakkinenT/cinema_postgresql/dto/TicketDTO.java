@@ -1,27 +1,28 @@
 package com.hakkinenT.cinema_postgresql.dto;
 
-import com.hakkinenT.cinema_postgresql.entities.Session;
 import com.hakkinenT.cinema_postgresql.entities.Ticket;
-import com.hakkinenT.cinema_postgresql.enums.TicketType;
 
-public class TicketMinDTO {
+public class TicketDTO {
     private SessionMinDTO session;
     private String codeSeat;
     private String ticketType;
+    private Double ticketValue;
 
-    public TicketMinDTO() {
+    public TicketDTO() {
     }
 
-    public TicketMinDTO(SessionMinDTO session, String codeSeat, String ticketType) {
+    public TicketDTO(SessionMinDTO session, String codeSeat, String ticketType, Double ticketValue) {
         this.session = session;
         this.codeSeat = codeSeat;
         this.ticketType = ticketType;
+        this.ticketValue = ticketValue;
     }
 
-    public TicketMinDTO(Ticket entity) {
+    public TicketDTO(Ticket entity) {
         session = new SessionMinDTO(entity.getSession());
         codeSeat = entity.getCodeSeatTicket();
         ticketType = entity.getTicketType().toString();
+        ticketValue = entity.getTicketValue();
     }
 
     public SessionMinDTO getSession() {
@@ -46,5 +47,13 @@ public class TicketMinDTO {
 
     public void setTicketType(String ticketType) {
         this.ticketType = ticketType;
+    }
+
+    public Double getTicketValue() {
+        return ticketValue;
+    }
+
+    public void setTicketValue(Double ticketValue) {
+        this.ticketValue = ticketValue;
     }
 }

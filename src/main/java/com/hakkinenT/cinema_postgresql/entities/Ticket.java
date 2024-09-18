@@ -15,6 +15,8 @@ public class Ticket {
     @Enumerated(EnumType.ORDINAL)
     private TicketType ticketType;
 
+    private Double ticketValue;
+
     @ManyToOne
     @JoinColumn(name = "order_id")
     private Order order;
@@ -22,10 +24,11 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(Session session, String codeSeatTicket, TicketType ticketType, Order order) {
+    public Ticket(Session session, String codeSeatTicket, TicketType ticketType, Double ticketValue, Order order) {
         id.setSession(session);
         id.setCodeSeatTicket(codeSeatTicket);
         this.ticketType = ticketType;
+        this.ticketValue = ticketValue;
         this.order = order;
     }
 
@@ -58,6 +61,14 @@ public class Ticket {
 
     public void setOrder(Order order) {
         this.order = order;
+    }
+
+    public Double getTicketValue() {
+        return ticketValue;
+    }
+
+    public void setTicketValue(Double ticketValue) {
+        this.ticketValue = ticketValue;
     }
 
     @Override
