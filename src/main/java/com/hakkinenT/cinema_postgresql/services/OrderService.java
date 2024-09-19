@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -84,16 +83,19 @@ public class OrderService {
         Ticket ticket = new Ticket();
         ticket.setOrder(order);
         ticket.setCodeSeatTicket(ticketDTO.getCodeSeat());
-
-        TicketType type = TicketType.valueOf(ticketDTO.getTicketType());
-        ticket.setTicketType(type);
-
         ticket.setTicketValue(ticketDTO.getTicketValue());
+
+        TicketType type = createTicketType(ticketDTO.getTicketType());
+        ticket.setTicketType(type);
 
         Session session = createSession(ticketDTO.getSession());
 
         ticket.setSession(session);
         return ticket;
+    }
+
+    private TicketType createTicketType(String ticketType) {
+        return TicketType.valueOf(ticketType);
     }
 
     private Session createSession(SessionMinDTO sessionDTO){

@@ -86,6 +86,10 @@ public class Order {
         this.payment = payment;
     }
 
+    public List<Ticket> getTickets() {
+        return tickets;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
