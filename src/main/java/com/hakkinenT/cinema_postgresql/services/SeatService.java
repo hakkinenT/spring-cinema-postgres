@@ -18,6 +18,10 @@ public class SeatService {
     @Transactional(readOnly = true)
     public List<RoomSeatDTO> getRoomMap(LocalDateTime exhibitionDate, int roomNumber){
         List<SeatProjection> seats = seatRepository.getRoomMap(exhibitionDate, roomNumber);
+        return createRoomSeatDTOList(seats);
+    }
+
+    private static List<RoomSeatDTO> createRoomSeatDTOList(List<SeatProjection> seats) {
         return seats.stream().map(RoomSeatDTO::new).toList();
     }
 }
