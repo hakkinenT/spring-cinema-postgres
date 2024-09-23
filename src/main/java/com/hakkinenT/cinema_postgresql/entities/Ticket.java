@@ -26,7 +26,7 @@ public class Ticket {
 
     public Ticket(Session session, String codeSeatTicket, TicketType ticketType, Double ticketValue, Order order) {
         id.setSession(session);
-        id.setCodeSeatTicket(codeSeatTicket);
+        id.setCodeSeat(codeSeatTicket);
         this.ticketType = ticketType;
         this.ticketValue = ticketValue;
         this.order = order;
@@ -41,11 +41,11 @@ public class Ticket {
     }
 
     public String getCodeSeatTicket(){
-        return id.getCodeSeatTicket();
+        return id.getCodeSeat();
     }
 
     public void setCodeSeatTicket(String codeSeatTicket){
-        id.setCodeSeatTicket(codeSeatTicket);
+        id.setCodeSeat(codeSeatTicket);
     }
     public TicketType getTicketType() {
         return ticketType;

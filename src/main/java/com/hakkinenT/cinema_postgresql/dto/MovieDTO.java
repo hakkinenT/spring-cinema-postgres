@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MovieDTO {
-    private Integer movieId;
+    private Integer id;
     private String title;
     private String duration;
     private String imageUrl;
@@ -19,8 +19,8 @@ public class MovieDTO {
     public MovieDTO() {
     }
 
-    public MovieDTO(Integer movieId, String title, String duration, String imageUrl, String synopsis, String ageRating) {
-        this.movieId = movieId;
+    public MovieDTO(Integer id, String title, String duration, String imageUrl, String synopsis, String ageRating) {
+        this.id = id;
         this.title = title;
         this.duration = duration;
         this.imageUrl = imageUrl;
@@ -29,7 +29,7 @@ public class MovieDTO {
     }
 
     public MovieDTO(Movie entity) {
-        this.movieId = entity.getId();
+        this.id = entity.getId();
         this.title = entity.getTitle();
         this.duration = entity.getDuration();
         this.imageUrl = entity.getImageUrl();
@@ -41,7 +41,7 @@ public class MovieDTO {
     }
 
     public MovieDTO(Movie entity, List<Session> sessionList) {
-        this.movieId = entity.getId();
+        this.id = entity.getId();
         this.title = entity.getTitle();
         this.duration = entity.getDuration();
         this.imageUrl = entity.getImageUrl();
@@ -52,12 +52,12 @@ public class MovieDTO {
         }
     }
 
-    public Integer getMovieId() {
-        return movieId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setMovieId(Integer movieId) {
-        this.movieId = movieId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getTitle() {

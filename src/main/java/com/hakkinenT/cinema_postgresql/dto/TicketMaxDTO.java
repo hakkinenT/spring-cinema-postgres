@@ -23,7 +23,7 @@ public class TicketMaxDTO {
 
     public TicketMaxDTO(TicketProjection projection) {
         session = new SessionMinDTO(projection.getExhibitionDate(), projection.getRoomNumber());
-        codeSeat = projection.getCodeSeatTicket();
+        codeSeat = projection.getCodeSeat();
         ticketType = TicketType.values()[projection.getTicketType()].toString();
         ticketValue = projection.getTicketValue();
         movieTitle = projection.getMovieTitle();

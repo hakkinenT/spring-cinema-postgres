@@ -11,7 +11,6 @@ import java.util.Set;
 public class Gender {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "order_id")
     private Integer id;
 
     private String description;

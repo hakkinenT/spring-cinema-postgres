@@ -9,7 +9,6 @@ import java.util.*;
 public class Movie {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "movie_id")
     private Integer id;
 
     private String title;

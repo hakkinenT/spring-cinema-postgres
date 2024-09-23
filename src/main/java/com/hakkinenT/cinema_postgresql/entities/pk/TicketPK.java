@@ -17,14 +17,14 @@ public class TicketPK {
     })
     private Session session;
 
-    private String codeSeatTicket;
+    private String codeSeat;
 
     public TicketPK() {
     }
 
-    public TicketPK(Session session, String codeSeatTicket) {
+    public TicketPK(Session session, String codeSeat) {
         this.session = session;
-        this.codeSeatTicket = codeSeatTicket;
+        this.codeSeat = codeSeat;
     }
 
     public Session getSession() {
@@ -35,12 +35,12 @@ public class TicketPK {
         this.session = session;
     }
 
-    public String getCodeSeatTicket() {
-        return codeSeatTicket;
+    public String getCodeSeat() {
+        return codeSeat;
     }
 
-    public void setCodeSeatTicket(String codeSeatTicket) {
-        this.codeSeatTicket = codeSeatTicket;
+    public void setCodeSeat(String codeSeat) {
+        this.codeSeat = codeSeat;
     }
 
     @Override
@@ -48,11 +48,11 @@ public class TicketPK {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         TicketPK ticketPK = (TicketPK) o;
-        return Objects.equals(session, ticketPK.session) && Objects.equals(codeSeatTicket, ticketPK.codeSeatTicket);
+        return Objects.equals(session, ticketPK.session) && Objects.equals(codeSeat, ticketPK.codeSeat);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(session, codeSeatTicket);
+        return Objects.hash(session, codeSeat);
     }
 }

@@ -6,7 +6,7 @@ public interface TicketProjection {
     LocalDateTime getExhibitionDate();
     Integer getRoomNumber();
     Integer getTicketType();
-    String getCodeSeatTicket();
+    String getCodeSeat();
     String getMovieTitle();
     Double getTicketValue();
 }

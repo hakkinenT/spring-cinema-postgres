@@ -11,7 +11,6 @@ import java.util.Objects;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "payment_id")
     private Integer id;
 
     @Column(columnDefinition = "TIMESTAMP WITH TIME ZONE")

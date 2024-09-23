@@ -13,7 +13,7 @@ public interface SeatRepository extends JpaRepository<Seat, SeatPK> {
     @Query(nativeQuery = true, value = """
             SELECT st.code_seat,
             	(CASE WHEN st.code_seat NOT IN (
-            			SELECT tk.code_seat_ticket
+            			SELECT tk.code_seat
             	 		FROM tb_ticket AS tk
             	 		WHERE tk.exhibition_date=:exhibitionDate AND tk.room_number=:roomNumber
             		) THEN false ELSE true END) as "isSold"

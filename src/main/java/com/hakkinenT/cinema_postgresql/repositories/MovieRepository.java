@@ -13,7 +13,7 @@ public interface MovieRepository extends JpaRepository<Movie, Integer> {
             FROM Movie obj
             JOIN FETCH obj.sessions AS ss
             JOIN FETCH ss.id.screeningRoom
-            WHERE ss.sessionClosed=false AND ss.movie.id= :movieId
+            WHERE ss.sessionClosed=false AND ss.movie.id= :id
             """)
-    List<Movie> searchMovieById(Integer movieId);
+    List<Movie> searchMovieById(Integer id);
 }

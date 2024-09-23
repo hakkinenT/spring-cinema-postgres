@@ -11,7 +11,6 @@ import java.util.Objects;
 public class Actor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "actor_id")
     private Integer id;
 
     private String name;
