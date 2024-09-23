@@ -1,8 +1,10 @@
 CREATE TABLE tb_payment(
-    payment_id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
+    id INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY,
     moment TIMESTAMP NOT NULL,
     payment_type INTEGER NOT NULL,
-    order_order_id INTEGER NOT NULL,
-    PRIMARY KEY(payment_id),
-    FOREIGN KEY (order_order_id) REFERENCES tb_order(order_id)
+    order_id INTEGER NOT NULL,
+    CONSTRAINT payment_pk
+        PRIMARY KEY(id),
+    CONSTRAINT order_fk
+        FOREIGN KEY (order_id) REFERENCES tb_order(id)
 );

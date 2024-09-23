@@ -5,9 +5,11 @@ CREATE TABLE tb_session(
 	session_closed BOOLEAN NOT NULL,
 	room_number INTEGER NOT NULL,
 	movie_id INTEGER NOT NULL,
-	PRIMARY KEY(exhibition_date, room_number),
-	FOREIGN KEY (room_number) REFERENCES tb_screening_room(room_number)
+	CONSTRAINT session_pk
+	    PRIMARY KEY(exhibition_date, room_number),
+	CONSTRAINT screening_room_fk
+	    FOREIGN KEY (room_number) REFERENCES tb_screening_room(room_number)
     		ON DELETE SET NULL ON UPDATE CASCADE,
-    FOREIGN KEY (movie_id) REFERENCES tb_movie(movie_id)
+    CONSTRAINT movie_fk FOREIGN KEY (movie_id) REFERENCES tb_movie(id)
     		ON DELETE SET NULL ON UPDATE CASCADE
 );
